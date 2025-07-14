@@ -14,7 +14,7 @@ app.use(express.json());
 dotenv.config();
 
 //routes
-app.use('/api/auth', userRoutes);
+app.use('/api', userRoutes);
 app.use('/api/notes', noteRoutes);
 app.use('/api/bookmarks', bookmarkRoutes);
 
