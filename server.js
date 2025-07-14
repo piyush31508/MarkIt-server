@@ -6,12 +6,16 @@ import bookmarkRoutes from './routes/bookmarks.js';
 import userRoutes from './routes/users.js';
 import cors from 'cors';
 
+dotenv.config();
+
 const app = express();
 
-//middleware
-app.use(cors());
+// Middleware
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
 app.use(express.json());
-dotenv.config();
 
 //routes
 app.use('/api', userRoutes);
