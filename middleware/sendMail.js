@@ -5,10 +5,10 @@ const sendMail = async (email, subject, otp) => {
     const transport = createTransport({
       host: "smtp.gmail.com",
       port: 465,
-      secure: true, // Important for Gmail
+      secure: true, 
       auth: {
-        user: process.env.GMAIL,     // 👉 Use uppercase consistent key
-        pass: process.env.PASSWORD   // 👉 Use uppercase consistent key
+        user: process.env.GMAIL,     
+        pass: process.env.PASSWORD   
       }
     });
 
