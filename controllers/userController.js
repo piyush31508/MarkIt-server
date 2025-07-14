@@ -46,3 +46,21 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: "Login failed" });
   }
 };
+
+export const getMe = async (req, res) => {
+  try {
+    const user = req.user;
+    if (!user) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    res.status(200).json({
+      _id: user._id,
+      email: user.email,
+      createdAt: user.createdAt,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
